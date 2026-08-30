@@ -616,8 +616,6 @@ function calculateGrowth() {
         const hMeter = parseFloat(heightInput) / 100;
         const bmi = (parseFloat(weightInput) / (hMeter * hMeter)).toFixed(1);
         bmiFormGroup.style.display = 'flex';    // 顯示 BMI 欄位
-        alert("當前抓到的體重與身高：", weightInput, hMeter); // 看看是不是抓到空值或 undefined
-alert("計算出來的 BMI 值：", bmi);   // 看看是不是 0.0、NaN 或正確數字
         document.getElementById('bmiValue').value = bmi;
         
         const bRes = document.getElementById('bmiResult');
