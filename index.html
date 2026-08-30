@@ -264,7 +264,7 @@
             <div class="form-group" id="bmiFormGroup" style="display: none;">
                 <label>BMI</label>
                 <div class="input-wrapper">
-                    <input type="number" id="bmiValue" readonly class="result-addon"style="display:flex;margin-left:0;">
+                    <input type="text" id="bmiValue" readonly class="result-addon"style="display:flex;margin-left:0;">
                 </div>
                 <div class="result-addon" id="bmiResult"></div>
             </div>
@@ -618,7 +618,7 @@ function calculateGrowth() {
         bmiFormGroup.style.display = 'flex';    // 顯示 BMI 欄位
         alert("當前抓到的體重與身高：", weightInput, hMeter); // 看看是不是抓到空值或 undefined
 alert("計算出來的 BMI 值：", bmi);   // 看看是不是 0.0、NaN 或正確數字
-        document.getElementById('bmiValue').innerText = bmi;
+        document.getElementById('bmiValue').value = bmi;
         
         const bRes = document.getElementById('bmiResult');
         bRes.innerText = "體位判斷：" + getBmiStatus(bmi, currentTable.bmi);
