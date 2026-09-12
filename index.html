@@ -242,74 +242,70 @@
                 <label class="required">出生日期</label>
                 <!-- 📌 修改成西元/民國 雙用  -->
                 <div style="
-    display: inline-flex; 
-    align-items: center; 
-    white-space: nowrap; 
-    vertical-align: middle;
-    height: 40px;
-    margin-left: 4px;         
-">
+                     display: inline-flex; 
+                     align-items: center; 
+                     white-space: nowrap; 
+                     vertical-align: middle;
+                     height: 40px;
+                     margin-left: 4px; ">
 
-                    <!-- 左側 Radio 區：📌 用 <span> 堆疊，完全免疫全域 label 寬度干擾！ -->
+                <!-- 左側 Radio 區：📌 用 <span> 堆疊，完全免疫全域 label 寬度干擾！ -->
                     <div style="
-        display: inline-flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        font-size: 16px;
-        line-height: 1.2; 
-        margin-right: 6px;
-        flex-shrink: 0;
-        width: auto;           /* 強制寬度自適應，不准被全域撐開 */
-    ">
+                         display: inline-flex; 
+                         flex-direction: column; 
+                         justify-content: center; 
+                         font-size: 16px;
+                         line-height: 1.2; 
+                         margin-right: 6px;
+                         flex-shrink: 0;
+                         width: auto;           /* 強制寬度自適應，不准被全域撐開 */
+                         ">
 
-                        <!-- 民國（改用 span） -->
-                        <span style="display: inline-flex; align-items: center; cursor: pointer; width: auto;">
-            <input type="radio" name="yearType" value="roc" checked style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">民國
-        </span>
+                    <!-- 民國（改用 span） -->
+                    <span style="display: inline-flex; align-items: center; cursor: pointer; width: auto;">
+                    <input type="radio" name="yearType" value="roc" checked style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">民國
+                    </span>
                         
-                        <!-- 西元（改用 span） -->
-                        <span style="display: inline-flex; align-items: center; margin-bottom: 2px; cursor: pointer; width: auto;">
-            <input type="radio" name="yearType" value="ad" style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">西元
-        </span>
+                    <!-- 西元（改用 span） -->
+                    <span style="display: inline-flex; align-items: center; margin-bottom: 2px; cursor: pointer; width: auto;">
+                    <input type="radio" name="yearType" value="ad" style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">西元
+                    </span>
                     </div>
 
-                           <!-- 民國輸入框群組 -->
-                        <div id="rocContainer" style="
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: space-between; 
-            width: 160px; 
-            box-sizing: border-box;
-            height: 40px;            
-        ">
-                            <!-- 「年」輸入框：獨立灰色細框 -->
-                            <input type="number" id="twYear" min="1" placeholder=" " style="
-                width: 31%; text-align: center; height: 40px; box-sizing: border-box; font-size: 16px;
-                border: 1px solid #ccc; border-radius: 4px; background-color: #fff; padding: 0;
-            ">
-                            <span style="font-size: 16px; color: #000; user-select: none; margin: 0 1px; width: auto !important;">年</span>
+                    <!-- 民國輸入框群組 -->
+                    <div id="rocContainer" style="
+                         display: inline-flex; 
+                         align-items: center; 
+                         justify-content: space-between; 
+                         width: 160px; 
+                         box-sizing: border-box;
+                         height: 40px;">
+                      <!-- 「年」輸入框：獨立灰色細框 -->
+                      <input type="number" id="twYear" min="1" placeholder=" " style="
+                         width: 31%; text-align: center; height: 40px; box-sizing: border-box; font-size: 16px;
+                         border: 1px solid #ccc; border-radius: 4px; background-color: #fff; padding: 0;">
+                      <span style="font-size: 16px; color: #000; user-select: none; margin: 0 1px; width: auto !important;">年</span>
+                      
+                      <!-- 「月」輸入框：獨立灰色細框 -->
+                      <input type="number" id="twMonth" min="1" max="12" placeholder=" " style="
+                         width: 24%; text-align: center; height: 40px; box-sizing: border-box; font-size: 16px;
+                         border: 1px solid #ccc; border-radius: 4px; background-color: #fff; padding: 0;">
+                      <span style="font-size: 16px; color: #000; user-select: none; margin: 0 1px; width: auto !important;">月</span>
 
-                            <!-- 「月」輸入框：獨立灰色細框 -->
-                            <input type="number" id="twMonth" min="1" max="12" placeholder=" " style="
-                width: 24%; text-align: center; height: 40px; box-sizing: border-box; font-size: 16px;
-                border: 1px solid #ccc; border-radius: 4px; background-color: #fff; padding: 0;
-            ">
-                            <span style="font-size: 16px; color: #000; user-select: none; margin: 0 1px; width: auto !important;">月</span>
-
-                            <!-- 「日」輸入框：獨立灰色細框 -->
-                            <input type="number" id="twDay" min="1" max="31" placeholder=" " style="
-                width: 24%; text-align: center; height: 40px; box-sizing: border-box; font-size: 16px;
-                border: 1px solid #ccc; border-radius: 4px; background-color: #fff; padding: 0;
-            ">
-                            <span style="font-size: 16px; color: #000; user-select: none; margin: 0 0 0 1px; width: auto !important;">日</span>
+                      <!-- 「日」輸入框：獨立灰色細框 -->
+                      <input type="number" id="twDay" min="1" max="31" placeholder=" " style="
+                         width: 24%; text-align: center; height: 40px; box-sizing: border-box; font-size: 16px;
+                         border: 1px solid #ccc; border-radius: 4px; background-color: #fff; padding: 0;">
+                      <span style="font-size: 16px; color: #000; user-select: none; margin: 0 0 0 1px; width: auto !important;">日</span>
                      
                     <!-- 右側輸入框主體：標準 150px 寬度，高 32px   font-size:14px  -->
-                    <div style="display: none; width: 160px; height: 40px; flex-shrink: 0;">
+                    <div style="width: 160px; height: 40px; flex-shrink: 0;">
                         <!-- 西元輸入框 -->
-                        <input type="date" id="adDate" style="width: 100%; box-sizing: border-box; height: 40px; font-size: 16px; padding: 0 4px;">
-
+                        <input type="date" id="adDate" style="display: none; width: 100%; box-sizing: border-box; height: 40px; font-size: 16px; padding: 0 4px;">
                      </div>
+                    
                     </div>
+               
                 </div>
 
                 <!-- 隱藏欄位 -->
@@ -787,14 +783,14 @@ document.querySelectorAll('input[name="yearType"]').forEach(radio => {
         
         if (this.value === 'ad') {
                        adDateInput.style.display = 'inline-block'; // 顯示西元
-            rocContainer.style.display = 'none';         // 隱藏民國
-            // 切換時清空數據，避免干擾
-            document.getElementById('birthday').value = adDateInput.value;              
+                       rocContainer.style.display = 'none';         // 隱藏民國
+                       // 切換時清空數據，避免干擾
+                       document.getElementById('birthday').value = adDateInput.value;              
         } else {
             adDateInput.style.display = 'none';          // 隱藏西元
             rocContainer.style.display = 'inline-flex';  // 顯示民國
             updateRocToAd(); // 觸發一次民國年換算
-        }
+            }
         checkAge(); // 切換時自動重算年齡
     });
 });
