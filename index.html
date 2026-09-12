@@ -782,7 +782,7 @@ document.querySelectorAll('input[name="yearType"]').forEach(radio => {
         const rocContainer = document.getElementById('rocContainer');
         
         if (this.value === 'ad') {
-                       adDateInput.style.display = 'inline-block'; // 顯示西元
+                       adDateInput.style.display = 'inline-flex'; // 顯示西元
                        rocContainer.style.display = 'none';         // 隱藏民國
                        // 切換時清空數據，避免干擾
                        document.getElementById('birthday').value = adDateInput.value;              
