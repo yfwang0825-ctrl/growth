@@ -299,9 +299,9 @@
                       <span style="font-size: 16px; color: #000; user-select: none; margin: 0 0 0 1px; width: auto !important;">日</span>
                      
                     <!-- 右側輸入框主體：標準 150px 寬度，高 32px   font-size:14px  -->
-                    <div style="width: 160px; height: 40px; flex-shrink: 0;">
+                    <div id="adContainer" style="display: none; width: 160px; height: 40px; flex-shrink: 0;">
                         <!-- 西元輸入框 -->
-                        <input type="date" id="adDate" style="display: none; width: 100%; box-sizing: border-box; height: 40px; font-size: 16px; padding: 0 4px;">
+                        <input type="date" id="adDate" style="width: 100%; box-sizing: border-box; height: 40px; font-size: 16px; padding: 0 4px;">
                      </div>
                     
                     </div>
@@ -780,14 +780,15 @@ document.querySelectorAll('input[name="yearType"]').forEach(radio => {
     radio.addEventListener('change', function() {
         const adDateInput = document.getElementById('adDate');
         const rocContainer = document.getElementById('rocContainer');
+        const adContainer = document.getElementById('adContainer');
         
         if (this.value === 'ad') {
-                       adDateInput.style.display = 'inline-flex'; // 顯示西元
+                       adContainer.style.display = 'inline-flex'; // 顯示西元
                        rocContainer.style.display = 'none';         // 隱藏民國
                        // 切換時清空數據，避免干擾
                        document.getElementById('birthday').value = adDateInput.value;              
         } else {
-            adDateInput.style.display = 'none';          // 隱藏西元
+            adContainer.style.display = 'none';          // 隱藏西元
             rocContainer.style.display = 'inline-flex';  // 顯示民國
             updateRocToAd(); // 觸發一次民國年換算
             }
