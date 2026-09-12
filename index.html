@@ -263,23 +263,23 @@
     ">
                         <!-- 西元（改用 span） -->
                         <span style="display: inline-flex; align-items: center; margin-bottom: 2px; cursor: pointer; width: auto;">
-            <input type="radio" name="yearType" value="ad" checked style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">西元
+            <input type="radio" name="yearType" value="ad" style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">西元
         </span>
 
                         <!-- 民國（改用 span） -->
                         <span style="display: inline-flex; align-items: center; cursor: pointer; width: auto;">
-            <input type="radio" name="yearType" value="roc" style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">民國
+            <input type="radio" name="yearType" value="roc" checked style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">民國
         </span>
                     </div>
 
                     <!-- 右側輸入框主體：標準 150px 寬度，高 32px   font-size:14px  -->
-                    <div style="display: block; width: 160px; height: 40px; flex-shrink: 0;">
+                    <div style="display: none; width: 160px; height: 40px; flex-shrink: 0;">
                         <!-- 西元輸入框 -->
                         <input type="date" id="adDate" style="width: 100%; box-sizing: border-box; height: 40px; font-size: 16px; padding: 0 4px;">
 
                         <!-- 民國輸入框群組 -->
                         <div id="rocContainer" style="
-            display: none; 
+            display: inline-flex; 
             align-items: center; 
             justify-content: space-between; 
             width: 100%; 
@@ -748,19 +748,19 @@ function resetForm() {
     document.getElementById('headCircum').required = true;
     document.getElementById('headCircumLabel').classList.add('required');
     // 1. 將 Radio 按鈕自動勾回「西元」
-const defaultRadio = document.querySelector('input[name="yearType"][value="ad"]');
+const defaultRadio = document.querySelector('input[name="yearType"][value="roc"]');
 if (defaultRadio) defaultRadio.checked = true;
 
 // 2. 清空西元輸入框的值，並讓它顯示出來
 const adDateInput = document.getElementById('adDate');
 if (adDateInput) {
     adDateInput.value = '';
-    adDateInput.style.display = 'inline-block';
+    adDateInput.style.display = 'none';
 }
 
 // 3. 清空民國年、月、日三個格子的值，並把整個民國區塊隱藏
 const rocContainer = document.getElementById('rocContainer');
-if (rocContainer) rocContainer.style.display = 'none';
+if (rocContainer) rocContainer.style.display = 'inline-flex';
 
 const twYear = document.getElementById('twYear');   if (twYear) twYear.value = '';
 const twMonth = document.getElementById('twMonth'); if (twMonth) twMonth.value = '';
