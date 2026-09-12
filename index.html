@@ -261,23 +261,19 @@
         flex-shrink: 0;
         width: auto;           /* 強制寬度自適應，不准被全域撐開 */
     ">
-                        <!-- 西元（改用 span） -->
-                        <span style="display: inline-flex; align-items: center; margin-bottom: 2px; cursor: pointer; width: auto;">
-            <input type="radio" name="yearType" value="ad" style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">西元
-        </span>
 
                         <!-- 民國（改用 span） -->
                         <span style="display: inline-flex; align-items: center; cursor: pointer; width: auto;">
             <input type="radio" name="yearType" value="roc" checked style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">民國
         </span>
+                        
+                        <!-- 西元（改用 span） -->
+                        <span style="display: inline-flex; align-items: center; margin-bottom: 2px; cursor: pointer; width: auto;">
+            <input type="radio" name="yearType" value="ad" style="margin: 0 3px 0 0; transform: scale(0.85); flex-shrink: 0;">西元
+        </span>
                     </div>
 
-                    <!-- 右側輸入框主體：標準 150px 寬度，高 32px   font-size:14px  -->
-                    <div style="display: none; width: 160px; height: 40px; flex-shrink: 0;">
-                        <!-- 西元輸入框 -->
-                        <input type="date" id="adDate" style="width: 100%; box-sizing: border-box; height: 40px; font-size: 16px; padding: 0 4px;">
-
-                        <!-- 民國輸入框群組 -->
+                           <!-- 民國輸入框群組 -->
                         <div id="rocContainer" style="
             display: inline-flex; 
             align-items: center; 
@@ -307,6 +303,12 @@
             ">
                             <span style="font-size: 16px; color: #000; user-select: none; margin: 0 0 0 1px; width: auto !important;">日</span>
                         </div>
+                    <!-- 右側輸入框主體：標準 150px 寬度，高 32px   font-size:14px  -->
+                    <div style="display: none; width: 160px; height: 40px; flex-shrink: 0;">
+                        <!-- 西元輸入框 -->
+                        <input type="date" id="adDate" style="width: 100%; box-sizing: border-box; height: 40px; font-size: 16px; padding: 0 4px;">
+
+ 
                     </div>
                 </div>
 
